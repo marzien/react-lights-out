@@ -31,8 +31,8 @@ import './Board.css';
 
 class Board extends Component {
   static defaultProps = {
-    nrows: 6,
-    ncols: 6,
+    nrows: 5,
+    ncols: 5,
     chanceLightStartsOn: 0.25
   }
   constructor(props) {
