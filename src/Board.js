@@ -79,19 +79,20 @@ class Board extends Component {
 
     this.setState({board, hasWon});
   }
-
-  render() {
-    if (this.state.hasWon) {
-      return <h1>YOU WON!!!</h1>;
-    }
-
+  
+  makeTable() {
   let tblBoard = [];
   for (let y = 0; y < this.props.nrows; y++) {
     let row = [];
     for (let x =0; x < this.props.ncols; x++) {
       let coord = `${y}-${x}`
-      row.push(<Cell key={coord} isLit={this.state.board[y][x]}
-      flipCellsAroundMe={() => this.flipCellsAround(coord)} />);
+      row.push(
+        <Cell 
+          key={coord} 
+          isLit={this.state.board[y][x]}
+          flipCellsAroundMe={() => this.flipCellsAround(coord)} 
+        />
+      );
     }
     tblBoard.push(<tr key={y}>{row}</tr>)
   }  
